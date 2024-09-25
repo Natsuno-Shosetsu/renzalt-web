@@ -1,0 +1,44 @@
+* {
+	box-sizing: border-box;
+
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
+#mac-title {
+	background-color: #0f0f0f;
+	border-bottom: solid 0.1rem black;
+}
+
+#dots {
+	display: flex;
+	flex-direction: row;
+	padding: 1rem;
+	text-align: center;
+}
+
+#dots span {
+	height: 1rem;
+	width: 1rem;
+	margin-right: 0.6rem;
+	background-color: #cacaca;
+	border-radius: 50%;
+}
+
+#dots p {
+	text-align: center;
+	
+}
+
+#dots span:nth-child(1) {background-color: #fc5653;}
+#dots span:nth-child(2) {background-color: #33c748;}
+#dots span:nth-child(3) {background-color: #fdbc40;}
+
+#mac-body {
+	padding: 6rem 10rem;
+	color: white;
+	margin: 5%;
+	padding: 10%;
+
+}

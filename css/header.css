@@ -1,0 +1,477 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+html {
+    scroll-behavior: smooth;
+    font-family: "Roboto";
+  }
+
+/*---------------------------------------------------------------------------------------------------*/
+/*===================================================================================================*/
+/*---------------------------------------------------------------------------------------------------*/
+
+.header{
+    height: 100vh;
+    min-height: 600px;
+    width: 100%;
+
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+body:not(.touch-device) #header-img {
+    --multiplier: clamp(0, calc(-5 * var(--scroll-y-percent, 0) + 1.5), 1);
+    transform: translate(calc(var(--tx, 0) * var(--multiplier, 1)),calc(var(--ty, 0) * var(--multiplier, 1)));
+    transition: transform .1s linear 0s;
+}
+#header-img{
+    background-image: url(https://s23.moe/assets/66028042_p0-977c66d4.webp);
+    background-color: rgb(0, 0, 0, 0.2);
+    background-blend-mode: multiply;
+    background-position: center;
+    background-size: cover;
+}
+
+#background {
+    position: fixed;
+    z-index: -2;
+    background-color: var(--md-sys-color-on-tertiary-container, #242424);
+    will-change: filter;
+    top: -30px;
+    left: -30px;
+    width: calc(100vw + 60px);
+    height: calc(100vh + 60px);
+    width: calc(100lvw + 60px);
+    height: calc(100lvh + 60px)
+}
+
+#background .background-image {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    animation: fadeIn 1s ease;
+}
+
+@supports (animation-timeline: scroll(root y)) {
+    #background {
+        animation: background-blur-dim auto linear;
+        animation-fill-mode: both;
+        animation-timeline: scroll(root y);
+        animation-range-start: 10vh;
+        animation-range-end: 30vh
+    }
+
+    @keyframes background-blur-dim {
+        0% {
+            filter: blur(0px) brightness(1)
+        }
+
+        to {
+            filter: blur(10px) brightness(.7)
+        }
+    }
+}
+
+@supports not (animation-timeline: scroll(root y)) {
+    #background {
+        --blur: clamp(0px, calc(50px * var(--scroll-y-percent, 0) + -5px), 10px);
+        --brightness: clamp(.7, calc(-1.5 * var(--scroll-y-percent, 0) + 1.15), 1);
+        filter: blur(var(--blur)) brightness(var(--brightness))
+    }
+}
+body:not(.touch-device) #background {
+    --multiplier: clamp(0, calc(-5 * var(--scroll-y-percent, 0) + 1.5), 1);
+    transform: translate(calc(var(--tx, 0) * var(--multiplier, 1)),calc(var(--ty, 0) * var(--multiplier, 1)));
+    transition: transform .1s linear 0s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+/*---------------------------------------------------------------------------------------------------*/
+/*===================================================================================================*/
+/*---------------------------------------------------------------------------------------------------*/
+
+.navbar{
+    position:sticky;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 200;
+    top: 0;
+    bottom: auto;
+    background: #161f28;
+    overflow: hidden;
+    height: 60px;
+}
+.navbrand, .navcenter, .navsupport{
+    position: relative;
+    display: flex;
+    justify-content:center;
+    width: 25%;
+}
+.navcenter{
+    width: auto;
+}
+.navbrand{
+    justify-content: left;
+}
+.navsupport{
+    justify-content: right;
+}
+.navbrand a, .navcenter a, .navsupport a{
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    
+    padding: 10px 20px;
+    transition: 0.5s;
+}
+.navbrand a{
+    font-size: 24px;
+    font-weight: 800;
+    margin-left: 10px;
+}
+.navsupport a{
+    
+    border-radius: 50px;
+    margin-right: 10px;
+}
+.navbrand a:hover, .navsupport a:hover, .navcenter a:hover{
+   color: orange;
+}
+.navcenter a::after{
+    background: transparent;
+    transition: 0.5s;
+}
+#nav-contact{
+    font-size: 0px;
+}
+.hamburger{
+    display: none;
+    cursor: pointer;
+    margin-right: 20px;
+}
+.bar{
+    background: white;
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: 0.5s; 
+}
+/*.navsupport a:hover{
+    background: white;
+    color: black;
+}
+.navcenter a:hover{
+    background: white;
+    color: black;
+    border-radius: 75px;
+}
+/*---------------------------------------------------------------------------------------------------*/
+/*===================================================================================================*/
+/*---------------------------------------------------------------------------------------------------*/
+
+.Title{
+    width: 90%;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: block;
+    line-height: 21px;
+    transition: 0.5s;
+
+}
+.Title img{
+    width: 200px;
+    height: auto;
+    transition: 0.5s;
+}
+
+.Title h1{
+    font-weight: 700;
+    line-height: 80px;
+    font-size: 38px;
+    transition: 0.5s;
+    text-align: center;
+}
+.Title p{
+    font-weight: 300;
+    font-size: 18px;
+    transition: 0.5s;
+    
+}
+.Title svg{
+    margin-top: 21px;
+    width: 198px;
+    height: 6px;
+    background: linear-gradient(94.94deg, #FD9E04 -1.76%, #FF4C01 80.53%);
+    border-radius: 75px;
+    transition: 0.5s;
+}
+
+/*---------------------------------------------------------------------------------------------------*/
+/*===================================================================================================*/
+/*---------------------------------------------------------------------------------------------------*/
+
+.commission-btn{
+    cursor: pointer;
+    top: 21px;
+    width: 352px;
+    position: relative;
+    display: inline-block;
+    touch-action: manipulation;
+    font-style: bold;
+    font-size: 26px;
+    color: #ffa3f4;
+    line-height:63px;
+    margin-bottom: 8px;
+
+
+    align-items: center;
+    text-align: center;
+    background: rgba(228,139,217,.1333333333);
+    border-radius: 75px;
+    transition: 0.5s;
+    border: 2px solid rgba(228,139,217,.6666666667);
+    
+}
+.commission-btn:hover{
+    background: white;
+    color:black;
+}
+
+.commission-btn1{
+    cursor: pointer;
+    top: 21px;
+    width: 352px;
+    position: relative;
+    display: inline-block;
+    font-style: bold;
+    font-size: 26px;
+    color: #ffa3f4;
+    line-height:63px;
+
+    align-items: center;
+    text-align: center;
+    background: rgba(228,139,217,.1333333333);
+    border-radius: 75px;
+    transition: 0.5s;
+    border: 2px solid rgba(228,139,217,.6666666667);
+}
+.commission-btn1:hover{
+    background: white;
+    color:black;
+}
+
+/*---------------------------------------------------------------------------------------------------*/
+/*===================================================================================================*/
+/*---------------------------------------------------------------------------------------------------*/
+
+.external-links{
+    margin-top: 21px;
+    align-items: center;
+    transition: 0.5s;
+    
+}
+.external-links img{
+    width: 50px;
+    height: auto;
+    transition: 0.5s;
+}
+.external-links ul li{
+    position: relative;
+    list-style: none;
+    display: inline-block;
+    padding: 8px 8px;
+    transition: 0.2s;
+}
+.external-links p{
+    position: absolute;
+    display: block;
+    
+    margin-top: -15px;
+    color: transparent;
+    font-weight: 500;
+    font-size: 14px;
+    transition: 0.5s;
+
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* .external-links img:hover{
+    transform: scale(1.17);
+    /* filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(-20deg) brightness(150%) contrast(100%); 
+}*/
+
+/*---------------------------------------------------------------------------------------------------*/
+/*===================================================================================================*/
+/*---------------------------------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------------------------------*/
+/*===================================================================================================*/
+/*---------------------------------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------------------------------*/
+/*===================================================================================================*/
+/*---------------------------------------------------------------------------------------------------*/
+
+
+@media(max-width: 800px){
+    .Title img{
+        width: 160px;
+        height: auto;
+    }
+    .nav-links ul li a{
+        font-size: calc(18px / 1.2);
+    }
+    .Title h1{
+        font-size: calc(38px / 1.2);
+    }
+    .Title p{
+        font-size: calc(18px / 1.2);
+    }
+    .Title svg{
+        height: calc(8px / 1.2);
+        width: calc(198px / 1.2);
+    }
+    .commission-btn{
+        font-size: calc(21px / 1);
+        width: calc(352px / 1.2);
+        height: calc(63px / 1.2);
+        line-height: calc(63px / 1.2);
+    }
+    .commission-btn1{
+        font-size: calc(21px / 1);
+        width: calc(352px / 1.2);
+        height: calc(63px / 1.2);
+        line-height: calc(63px / 1.2);
+    }
+    .external-links img{
+        width: calc(50px / 1.2);
+    }
+    .external-links a p{
+        font-size: 12px;
+    }
+    .navbar{
+        height: 50px;
+        transition: 0.5s;
+    }
+    .navbar.active{
+        height: 50vh;
+        transition: 0.5s;
+    }
+    .navbar a{
+        font-size: calc(18px / 1.33);
+        padding: 6px 15px;
+    }
+    .navcenter a{
+        font-size: 0px;
+        padding: 6px 10px;
+        color: transparent;
+        transition: 0.5s;
+    }
+    .navcenter a::after{
+        display: block;
+        content: "";
+        background: transparent;
+        width: 100%;
+        margin: 20px auto;
+        height: 1px;
+    }
+    .navbrand{
+        vertical-align: top;
+    }
+    .navbrand a{
+        font-size: 18px;
+    }
+    .navsupport a{
+        font-size: 0px;
+    }
+    .navbrand.active a{
+        font-size: 0;
+    }
+    .hamburger{
+        display: block;
+    }
+    .hamburger.active .bar:nth-child(2){
+        opacity: 0%;
+    }
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    .navcenter{
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        transition: 0.5s;
+    }
+    .navcenter.active a{
+        font-size: 16px !important;
+        color: white;
+        transition: 0.5s;
+    }
+    .navcenter.active a:hover{
+        color: orange;
+    }
+    .navcenter.active a::after{
+        background: white;
+    }
+}
+
+.down-arrow {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    -webkit-tap-highlight-color: transparent;
+    transition: opacity .3s ease
+}
+
+.down-arrow .down-arrow-inner {
+    font-size: min(60px,12vw);
+    width: 1em;
+    height: 1.5em;
+    padding-left: .25em;
+    padding-right: .25em;
+    cursor: pointer;
+    color: color-mix(in srgb,var(--md-sys-color-primary-container),#fff 30%);
+    opacity: .55;
+    transition: opacity .25s ease
+}
+
+@supports not (color: color-mix(in srgb,red,red)) {
+    .down-arrow .down-arrow-inner {
+        color:rgb(calc(var(--md-sys-color-primary-container-r) * .7 + 76.5),calc(var(--md-sys-color-primary-container-g) * .7 + 76.5),calc(var(--md-sys-color-primary-container-b) * .7 + 76.5))
+    }
+}
+
+.down-arrow .down-arrow-inner:hover {
+    opacity: .8
+}
+
+html.scrolled .down-arrow {
+    opacity: 0;
+    pointer-events: none
+}

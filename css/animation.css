@@ -1,0 +1,88 @@
+.animation-text-fade p{
+    color: white;
+}
+.animation-change-color p, .animation-agree{
+    background: linear-gradient(94.94deg, #1bb3da -1.76%, #1382cc 80.53%);
+}
+.animation-change-color-region, .animation-change-color-bg p{
+    background: linear-gradient(94.94deg, #FD9E04 -1.76%, #FF4C01 80.53%);
+}
+.animation-change-bg{
+    opacity: 100%;
+}
+.animation-headshot{
+    height: 73%;
+}
+.animation-bustup{
+    height: 63%;
+}
+.animation-halfbody{
+    height: 48%;
+}
+.animation-kneeup{
+    height: 30%;
+}
+.animation-fullbody{
+    height: 0%;
+}
+.animation-fullbody-up{
+    height: 0%;
+}
+.animation-commercial{
+    background: linear-gradient(94.94deg, #FD9E04 -1.76%, #FF4C01 80.53%);
+}
+.animation-canvas{
+    background: white;
+}
+.opacity-mid{
+    opacity: 75%;
+}
+.animation-order{
+    scale: 0%;
+    opacity: 0%;
+    margin-top: 300px;
+}
+.animation-order-enabled{
+    background: linear-gradient(94.94deg, #FD9E04 -1.76%, #FF4C01 80.53%);
+    opacity: 100%;
+}
+.animation-sosmed p{
+    color: white;
+    margin-top: 6px;
+}
+.animation-sosmed img{
+    transform: scale(1.17);
+}
+.animation-dynamic-pricetag{
+    width: 150px;
+    transform: translate(20%,-50%);
+}
+.animation-triangle{
+    transform: translate(-150px,-50%);
+}
+:root{
+    --total-price-str: "$0";
+
+    --price-bustup-str: "$0";
+    --price-halfbody-str: "$0";
+    --price-kneeup-str: "$0";
+    --price-fullbody-str: "$0";
+
+    --price-solidcolor-str: "+$0";
+    --price-blurry-str: "+$0";
+    --price-detailed-str: "+$0";
+    --price-blender-str: "+$0";
+
+    --x-offset: 8vw;
+    --y-offset: -225%;
+
+    --color-bustup: #1793d1;
+    --color-halfbody: #1793d1;
+    --color-kneeup: #1793d1;
+    --color-fullbody: #1793d1;
+
+    --color-solidcolor: #FF4C01;
+    --color-blurry: #FF4C01;
+    --color-detailed: #FF4C01;
+    --color-blender: #FF4C01;
+}
