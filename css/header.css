@@ -53,11 +53,16 @@ body:not(.touch-device) #header-img {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    animation: fadeIn 1s ease;
-    animation: change 20s infinite ease;
+    animation-name: animation;
+    animation-direction: alternate-reverse;
+    animation-duration: 20s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+    animation-timing-function: ease-in-out;
 }
 
-@keyframes change{
+@keyframes animation{
     0%
     {
         background-image: url(https://s23.moe/assets/69618131_p0-921b5129.webp);
