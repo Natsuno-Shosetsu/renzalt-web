@@ -54,6 +54,34 @@ body:not(.touch-device) #header-img {
     background-repeat: no-repeat;
     background-position: center;
     animation: fadeIn 1s ease;
+    animation: change 20s infinite ease;
+}
+
+@keyframes change{
+    0%
+    {
+        background-image: url(https://s23.moe/assets/69618131_p0-921b5129.webp);
+    }
+    20%
+    {
+        background-image: url(https://s23.moe/assets/69618131_p1-0eab8e6f.webp);
+    }
+    40%
+    {
+        background-image: url(https://s23.moe/assets/69618131_p0-921b5129.webp);
+    }
+    60%
+    {
+        background-image: url(https://s23.moe/assets/69618131_p1-0eab8e6f.webp);
+    }
+    80%
+    {
+        background-image: url(https://s23.moe/assets/69618131_p0-921b5129.webp);
+    }
+    100%
+    {
+        background-image: url(https://s23.moe/assets/69618131_p1-0eab8e6f.webp);
+    }
 }
 
 @supports (animation-timeline: scroll(root y)) {
