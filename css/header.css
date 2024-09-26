@@ -144,9 +144,12 @@ body:not(.touch-device) #background {
     z-index: 200;
     top: 0;
     bottom: auto;
-    background: #161f28;
+    background: transparent;
     overflow: hidden;
     height: 60px;
+    --tw-backdrop-blur: blur(24px);
+    backdrop-filter: var(--tw-backdrop-blur);
+    background-color: rgb(156 163 175 / var(--tw-bg-opacity));
 }
 .navbrand, .navcenter, .navsupport{
     position: relative;
