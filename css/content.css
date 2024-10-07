@@ -944,3 +944,23 @@ body{
     unicode-bidi: isolate;
     border-color: inherit;
 }
+
+.markdown-section {
+    /* margin: 0 auto; */
+    max-width: 90%;
+    padding: 30px 15px 40px;
+    position: relative;
+}
+
+.article {
+    display: block;
+    unicode-bidi: isolate;
+}
+.markdown-section tr {
+    border-top: 1px solid #ccc;
+}
+
+.markdown-section td, .markdown-section th {
+    border: 1px solid #ddd;
+    padding: 6px 13px;
+}
