@@ -511,3 +511,46 @@ html.scrolled .down-arrow {
     opacity: 0;
     pointer-events: none
 }
+
+.clearfix {
+    content:"";
+    display:table;
+    clear:both;
+  }
+  
+  #footer {
+    padding: 20px 0;
+    position: relative;
+    margin-top: 20px;
+    font-size: 13px;
+  }
+  
+  #footer .octicon-mark-github {
+    position: absolute;
+    bottom: 38px;
+    left: 50%;
+    height: 24px;
+    width: 24px;
+    margin-top: -4px;
+    margin-left: -12px;
+    font-size: 24px;
+    color: #ccc;
+  }
+  
+  #footer .octicon-mark-github:hover {
+    color: #fff;
+  }
+  
+  .right { float: right; }
+  #footer .right { margin-right: -12px; }
+  
+  #legal {
+    margin: 0;
+    list-style: none;
+    padding-left: 0px;
+  }
+  
+  #legal li {
+    display: inline-block;
+    margin-right: 15px;
+  }
