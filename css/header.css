@@ -511,3 +511,19 @@ html.scrolled .down-arrow {
     opacity: 0;
     pointer-events: none
 }
+
+.site-header {
+    background-color: rgba(25, 25, 25, 1);
+    padding: 13px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+.clearfix {
+    content: "";
+    display: table;
+    clear: both;
+}
