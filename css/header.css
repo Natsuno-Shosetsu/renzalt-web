@@ -554,3 +554,8 @@ html.scrolled .down-arrow {
     display: inline-block;
     margin-right: 15px;
   }
+
+a {
+    color: #fc3;
+    text-decoration: none;
+}
